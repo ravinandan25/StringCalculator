@@ -1,6 +1,17 @@
 public class StringCalculator {
+    private  final  String delimeter=",|\n|;";
     public int Add(String numbers){
-        String[] arrays_number=numbers.split(",");
+        if(numbers.startsWith("//")){
+            int i=0;
+            while (true){
+                if(numbers.charAt(i)=='1'){
+                    break;
+                }
+                i++;
+            }
+            numbers=numbers.substring(i,numbers.length());
+        }
+        String[] arrays_number=numbers.split(delimeter);
        if(numbers.isEmpty()){
            return 0;
        }

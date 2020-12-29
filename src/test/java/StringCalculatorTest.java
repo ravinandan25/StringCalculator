@@ -26,4 +26,13 @@ public class StringCalculatorTest {
     public void input_n_number(){
         Assert.assertEquals(15,sc.Add("1,2,3,4,5"));
     }
+    @Test
+    public void input_n_betweenNumbers(){
+        Assert.assertEquals(6,sc.Add("1\n2,3"));
+    }
+    @Test
+    public void inputdifferentdelimeter(){
+        Assert.assertEquals(3,sc.Add("//;\\n1;2"));
+    }
+
 }
