@@ -35,4 +35,5 @@ public class StringCalculatorTest {
         Assert.assertEquals(3,sc.Add("//;\\n1;2"));
     }
 
+
 }
