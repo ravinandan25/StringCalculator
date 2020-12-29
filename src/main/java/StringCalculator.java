@@ -4,12 +4,16 @@ public class StringCalculator {
        if(numbers.isEmpty()){
            return 0;
        }
-       if(numbers.length()==1){
-           return stringToInt(numbers);
+       if(arrays_number.length==1){
+           return stringToInt(arrays_number[0]);
        }
-       else{
-           return sumof2numbers(arrays_number[0],arrays_number[1]);
 
+       else {
+           int result=0;
+           for(int i=0;i<arrays_number.length;i++) {
+               result =result+stringToInt(arrays_number[i]);
+           }
+           return result;
        }
 
 
@@ -17,9 +21,7 @@ public class StringCalculator {
     private int stringToInt(String numbers){
         return Integer.valueOf(numbers);
     }
-    private int sumof2numbers(String number1 ,String number2){
-        return Integer.valueOf(number1)+Integer.valueOf(number2);
-    }
+
 
 }
 

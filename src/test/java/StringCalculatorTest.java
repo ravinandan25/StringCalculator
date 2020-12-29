@@ -22,4 +22,8 @@ public class StringCalculatorTest {
     public void input2number(){
         Assert.assertEquals(3,sc.Add("1,2"));
     }
+    @Test
+    public void input_n_number(){
+        Assert.assertEquals(15,sc.Add("1,2,3,4,5"));
+    }
 }
