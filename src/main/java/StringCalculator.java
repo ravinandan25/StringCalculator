@@ -22,19 +22,23 @@ public class StringCalculator {
 
 
     }
-    private  String findNegativeNumber(String[] arrays_number) throws Exception {
+    private  String findNegativeNumber(String[] arrays_number)  {
         String s="";
         for(String current:arrays_number){
             if(stringToInt(current)<0){
-                s=s+","+current;
+                s=s+current+",";
             }
+
         }
       return s;
 
     }
     private  void NegativeNumber(String s) throws Exception {
-
-                throw new Exception("negatives not allowed:"+"["+"]");
+                int len=s.length();
+                s=s.substring(0,len-1);
+                String temp="negatives not allowed:"+"["+s+"]";
+                System.out.println(temp);
+                throw new Exception(temp);
     }
 
     private String  findindex(String numbers){
