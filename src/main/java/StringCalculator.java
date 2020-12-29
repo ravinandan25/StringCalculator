@@ -12,21 +12,31 @@ public class StringCalculator {
        }
 
        else {
-           findNegativeNumber(arrays_number);
+
+           String s=findNegativeNumber(arrays_number);
+           if(!s.isEmpty()){
+               NegativeNumber(s);
+           }
            return getsum(arrays_number);
        }
 
 
     }
-    private  void findNegativeNumber(String[] arrays_number) throws Exception {
+    private  String findNegativeNumber(String[] arrays_number) throws Exception {
+        String s="";
         for(String current:arrays_number){
             if(stringToInt(current)<0){
-                throw new Exception("negatives not allowed");
+                s=s+","+current;
             }
         }
-
+      return s;
 
     }
+    private  void NegativeNumber(String s) throws Exception {
+
+                throw new Exception("negatives not allowed:"+"["+"]");
+    }
+
     private String  findindex(String numbers){
         int i=0;
         while (true){

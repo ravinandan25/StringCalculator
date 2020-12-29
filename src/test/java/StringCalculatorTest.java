@@ -36,7 +36,7 @@ public class StringCalculatorTest {
     }
     @Test(expected = Exception.class)
     public void negativeInputException() throws Exception {
-        sc.Add("-1,-2,3");
+       Assert.assertEquals("Negative are not allowed:[-2]",sc.Add("-2"));
     }
 
 
