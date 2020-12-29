@@ -10,18 +10,20 @@ public class StringCalculator {
        if(numbers.isEmpty()){
            return 0;
        }
+
+       else {
+           findNegativeNumber(arrays_number);
+           return getsum(arrays_number);
+       }
+
+
+    }
+    private  void findNegativeNumber(String[] arrays_number) throws Exception {
         for(String current:arrays_number){
             if(stringToInt(current)<0){
                 throw new Exception("negatives not allowed");
             }
         }
-       if(arrays_number.length==1){
-           return stringToInt(arrays_number[0]);
-       }
-
-       else {
-           return getsum(arrays_number);
-       }
 
 
     }
