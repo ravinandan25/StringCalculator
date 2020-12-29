@@ -1,5 +1,10 @@
 public class StringCalculator {
     public int Add(String numbers){
-        return 0;
+       if(numbers.equals("")){
+           return 0;
+       }
+
+        return Integer.valueOf(numbers);
     }
 }
+
