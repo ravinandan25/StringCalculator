@@ -10,29 +10,33 @@ public class StringCalculatorTest {
         sc=new StringCalculator();
     }
     @Test
-    public void emptyinput(){
+    public void emptyinput() throws Exception {
 
         Assert.assertEquals(0,sc.Add(""));
     }
     @Test
-    public void input1number(){
+    public void input1number() throws Exception {
         Assert.assertEquals(1,sc.Add("1"));
     }
     @Test
-    public void input2number(){
+    public void input2number() throws Exception {
         Assert.assertEquals(3,sc.Add("1,2"));
     }
     @Test
-    public void input_n_number(){
+    public void input_n_number() throws Exception {
         Assert.assertEquals(15,sc.Add("1,2,3,4,5"));
     }
     @Test
-    public void input_n_betweenNumbers(){
+    public void input_n_betweenNumbers() throws Exception {
         Assert.assertEquals(6,sc.Add("1\n2,3"));
     }
     @Test
-    public void inputdifferentdelimeter(){
+    public void inputdifferentdelimeter() throws Exception {
         Assert.assertEquals(3,sc.Add("//;\\n1;2"));
+    }
+    @Test(expected = Exception.class)
+    public void negativeInputException() throws Exception {
+        sc.Add("-1");
     }
 
 

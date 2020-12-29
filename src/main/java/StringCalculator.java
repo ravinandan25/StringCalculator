@@ -1,27 +1,31 @@
 public class StringCalculator {
     private  final  String delimeter=",|\n|;";
-    public int Add(String numbers){
+    public int Add(String numbers) throws Exception {
+
         if(numbers.startsWith("//")){
-            int i=findindex(numbers);
-            numbers=numbers.substring(i,numbers.length());
+            numbers=findindex(numbers);
+
         }
         String[] arrays_number=numbers.split(delimeter);
        if(numbers.isEmpty()){
            return 0;
        }
+        for(String current:arrays_number){
+            if(stringToInt(current)<0){
+                throw new Exception("negatives not allowed");
+            }
+        }
        if(arrays_number.length==1){
            return stringToInt(arrays_number[0]);
        }
 
        else {
-           int result=getsum(arrays_number);
-
-           return result;
+           return getsum(arrays_number);
        }
 
 
     }
-    private int  findindex(String numbers){
+    private String  findindex(String numbers){
         int i=0;
         while (true){
             if(numbers.charAt(i)=='1'){
@@ -29,7 +33,7 @@ public class StringCalculator {
             }
             i++;
         }
-        return i;
+        return numbers.substring(i,numbers.length());
     }
     private int getsum(String[] arrays_number){
         int result=0;
