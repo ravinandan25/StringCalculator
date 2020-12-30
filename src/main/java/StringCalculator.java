@@ -9,10 +9,7 @@ public class StringCalculator {
             numbers=findindex(numbers);
 
         }
-        final String pattern1="s+";
-        final String Pattern2="m+";
 
-        numbers=numbers.replace("***",",");
         numbers=numbers.replace("*","s");
         numbers=numbers.replace("%","m");
         numbers=numbers.replaceAll("s+",",");
