@@ -38,8 +38,8 @@ public class StringCalculatorTest {
     }
     @Test(expected = Exception.class)
     public void negativeInputException() throws Exception {
-       //sc.Add("-2");
-       Assert.assertEquals("negatives not allowed:[-1 -3]",String.valueOf(sc.Add("-1")));
+       sc.Add("-2");
+       //Assert.assertEquals("negatives not allowed:[-1 -3]",String.valueOf(sc.Add("-1")));
     }
     @Test
     public void biggerThanThousand() throws Exception {
