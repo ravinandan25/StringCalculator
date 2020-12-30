@@ -44,22 +44,22 @@ public class StringCalculatorTest {
     @Test
     public void biggerThanThousand() throws Exception {
 
-        Assert.assertEquals(2,sc.Add("2,1001"));
+        Assert.assertEquals(1002,sc.Add("2,1000"));
     }
     @Test
     public void delimiterOfAnyLengthWithFixedFormat() throws Exception {
 
-        Assert.assertEquals(6,sc.Add("//[***]\\n1***2***3"));
+        Assert.assertEquals(6,sc.Add("//[***]\\n//[***]\\n//[***]\\n1****2***3"));
     }
     @Test
     public void multipleDelimiter() throws Exception {
 
-        Assert.assertEquals(6,sc.Add("//[*][%]\\n1*2%3"));
+        Assert.assertEquals(6,sc.Add("//[*][%]\\n//[*][%]\\n1*2%3"));
     }
     @Test
     public void multipleDelimiterof_m_s() throws Exception {
 
-        Assert.assertEquals(6,sc.Add("//[**][%%]\\n1**2%%3"));
+        Assert.assertEquals(7,sc.Add("//[**][%%]\\n//[**][%%]\\n//[**][%%]\\n2**2%%3"));
     }
 
 }

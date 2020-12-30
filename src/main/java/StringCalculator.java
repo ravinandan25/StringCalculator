@@ -52,7 +52,7 @@ public class StringCalculator {
     private String  findindex(String numbers){
         int i=0;
         while (true){
-            if(numbers.charAt(i)=='1'){
+            if(Character.isDigit(numbers.charAt(i))){
                 break;
             }
             i++;
