@@ -49,5 +49,10 @@ public class StringCalculatorTest {
 
         Assert.assertEquals(6,sc.Add("//[***]\\n1***2***3"));
     }
+    @Test
+    public void multipleDelimiter() throws Exception {
+
+        Assert.assertEquals(6,sc.Add("//[*][%]\\n1*2%3"));
+    }
 
 }
