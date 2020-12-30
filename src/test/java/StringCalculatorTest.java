@@ -10,7 +10,7 @@ public class StringCalculatorTest {
         sc=new StringCalculator();
     }
     @Test
-    public void emptyinput() throws Exception {
+    public void emptyInput() throws Exception {
 
         Assert.assertEquals(0,sc.Add(""));
     }
@@ -31,7 +31,7 @@ public class StringCalculatorTest {
         Assert.assertEquals(6,sc.Add("1\n2,3"));
     }
     @Test
-    public void inputdifferentdelimeter() throws Exception {
+    public void inputDifferentDel() throws Exception {
         Assert.assertEquals(3,sc.Add("//;\\n1;2"));
     }
     @Test(expected = Exception.class)
@@ -39,6 +39,15 @@ public class StringCalculatorTest {
        sc.Add("-2");
       // Assert.assertEquals("negatives not allowed:[-1 -3]",String.valueOf(sc.Add("-1")));
     }
+    @Test
+    public void biggerThanThousand() throws Exception {
 
+        Assert.assertEquals(2,sc.Add("2,1001"));
+    }
+    @Test
+    public void delimiterOfAnyLengthWithFixedFormat() throws Exception {
+
+        Assert.assertEquals(6,sc.Add("//[***]\\n1***2***3"));
+    }
 
 }

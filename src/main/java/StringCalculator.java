@@ -1,18 +1,22 @@
 public class StringCalculator {
-    private  final  String delimeter=",|\n|;";
-    public int Add(String numbers) throws Exception {
+    private  final  String delimeter= ",|\n|;" ;
 
+
+    public int count=0;
+    public int Add(String numbers) throws Exception {
+         count++;
         if(numbers.startsWith("//")){
             numbers=findindex(numbers);
 
         }
-        String[] arrays_number=numbers.split(delimeter);
+        numbers=numbers.replace("***",",");
        if(numbers.isEmpty()){
            return 0;
        }
 
        else {
 
+           String[] arrays_number=numbers.split(delimeter);
            String s=findNegativeNumber(arrays_number);
            if(!s.isEmpty()){
                NegativeNumber(s);
@@ -54,14 +58,21 @@ public class StringCalculator {
     private int getsum(String[] arrays_number){
         int result=0;
         for(int i=0;i<arrays_number.length;i++) {
-            result =result+stringToInt(arrays_number[i]);
+            int temp=stringToInt(arrays_number[i]);
+            if(temp<=1000){
+            result =result+temp;
+            }
         }
         return result;
     }
     private int stringToInt(String numbers){
+
         return Integer.valueOf(numbers);
     }
+    public int GetCalledCount(){
 
+        return count;
+    }
 
 }
 
