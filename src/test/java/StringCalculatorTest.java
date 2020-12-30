@@ -2,6 +2,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+
+
 public class StringCalculatorTest {
     private StringCalculator sc;
     @Before
@@ -53,6 +55,11 @@ public class StringCalculatorTest {
     public void multipleDelimiter() throws Exception {
 
         Assert.assertEquals(6,sc.Add("//[*][%]\\n1*2%3"));
+    }
+    @Test
+    public void multipleDelimiterof_m_s() throws Exception {
+
+        Assert.assertEquals(6,sc.Add("//[**][%%]\\n1**2%%3"));
     }
 
 }
