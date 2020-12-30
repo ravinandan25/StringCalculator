@@ -10,6 +10,8 @@ public class StringCalculator {
 
         }
         numbers=numbers.replace("***",",");
+        numbers=numbers.replace("*",",");
+        numbers=numbers.replace("%",",");
        if(numbers.isEmpty()){
            return 0;
        }
